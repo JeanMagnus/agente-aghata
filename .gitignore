@@ -1,0 +1,68 @@
+# Ambientes virtuais e dependências (Python / Node)
+.venv/
+venv/
+env/
+ENV/
+node_modules/
+.pnpm-store/
+
+# Builds e outputs compilados
+dist/
+build/
+out/
+.next/
+.nuxt/
+*.tsbuildinfo
+
+# Caches Python / ferramentas
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.uv_cache/
+
+# Testes e cobertura
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+.coverage.*
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs e arquivos temporários
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.temp/
+.tmp/
+*.pid
+*.seed
+*.pid.lock
+
+# IDEs e editores
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
