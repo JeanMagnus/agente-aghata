@@ -10,7 +10,7 @@ from langchain_core.tools import tool
 from langgraph.prebuilt import ToolNode
 from langchain_core.runnables import RunnableConfig
 
-import os
+import json, os
 
 # CONFIGURAÇÕES
 
@@ -21,6 +21,7 @@ class Settings:
     AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
     DATABASE_VECTOR = os.getenv("DATABASE_VECTOR")
     GLOBAL_SYSTEM_PROMPT = os.getenv("GLOBAL_SYSTEM_PROMPT", "").replace("\\n", "\n")
+    EXPRESSOES = json.loads(os.getenv("EXPRESSOES", "[]"))
 
 settings = Settings()
 
@@ -51,22 +52,7 @@ def expressoes() -> str:
     Retorna uma expressão e sua função é encaixar essa expressão de forma engraçada e natural na conversa, como se fosse uma piada ou meme.
     """
     import random
-    expressoes_aghata = [
-        "eu quero veyr mi da",
-        "nossa mano olha a transfobia, tiração",
-        "vamos assar um ratinho pra almoçar?",
-        "NUM DOR, EU NÃO VOU DAR NÃOR",
-        "nossa veyr",
-        "veyr",
-        "miojinho bem cis",
-        "nossar que deliciar",
-        "bem trans",
-        "a mais mais",
-        "a gata mais gata",
-        "a que fecha",
-        "a que lacra",
-        "a que arrasa",
-        ]
+    expressoes_aghata = settings.EXPRESSOES
     return random.choice(expressoes_aghata)
 
 tools = [expressoes]
